@@ -10,9 +10,9 @@ import os.path
 from shutil import copyfile
 
 # Unity工程目录，注意后面有个"/"
-ProjectDir = "/Users/wankcn/Desktop/EditorTest/"
+ProjectDir = "/Users/wankcn/Desktop/Suntail_Village_Optimization/"
 # 文本文件目录 需要拷贝性能报告到文本里 我这里命名为audio.txt
-TextPath = "/Users/wankcn/Desktop/audio_txt"
+TextPath = ProjectDir + "Assets/WRHelper/OtherTxt/audio_compressedInMemory "   
 # 源文件备份目录
 BackUpDir = ProjectDir + "BackUp/"
 
@@ -118,9 +118,9 @@ def opt_file(file_name):
     dic = get_audiofile_data(full_src_path)
 
     # 修改数据
-    data = opt_force_to_mono(dic)
+    # data = opt_force_to_mono(dic)
     # data = opt_compressed_in_memory(dic)
-    # data = opt_streaming(dic)
+    data = opt_streaming(dic)
 
     # 写入数据
     write_file(full_src_path, data)
